@@ -1,5 +1,5 @@
 <?php 
-  require "funcoesLogin.php";
+  require "req/funcoesLogin.php";
   include "inc/head.php";
 
   if($_REQUEST) {
@@ -9,10 +9,12 @@
     $confirmarSenha = $_REQUEST["confirmarSenha"];
 
     if($senha == $confirmarSenha) {
+
+      $senhaCript = password_hash($senha, PASSWORD_DEFAULT);
       $novoUsuario = [
         "nome" => $nome,
         "email" => $email,
-        "senha" => $senha,
+        "senha" => $senhaCript,
       ];
 
       $cadastrou = cadastrarUsuario($novoUsuario);
@@ -57,11 +59,6 @@
       </div>
     </form>
   </div>
-
-
-
-
-
 <?php 
   include "inc/footer.php";
 ?>

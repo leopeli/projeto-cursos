@@ -1,1 +1,9 @@
-{"usuarios":[{"nome":"Leonidas","email":"leopeli.it@gmail.com","senha":"leo"}]}
+{
+  "usuarios":[
+    {
+      "nome":"Leonidas",
+      "email":"leopeli.it@gmail.com",
+      "senha":"$2y$10$TMitoMMBi6B9oLwYFqBw\/O7snf3E9bIg4zKkRn9yast18AZMq4Bfu"
+    }
+  ]
+}
