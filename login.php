@@ -7,8 +7,13 @@
     $email = $_REQUEST["email"];
     $senha = $_REQUEST["senha"];
     //verificando se o usurario esta logado atraves da funcao
-    $estaLogado = logarUsuario($email, $senha);
-    if($estaLogado) {
+    $nomeLogado = logarUsuario($email, $senha);
+    if($nomeLogado) {
+      session_start();
+      $_SESSION["nome"] = $nomeLogado;
+      $_SESSION["email"] = $email;
+      $_SESSION["nivelAcesso"] = mt_rand(0, 1);
+      $_SESSION["logado"] = true;
       header("Location: index.php");
     } else {
       $erro = "Usuario ou senha está errado!";

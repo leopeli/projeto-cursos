@@ -13,7 +13,6 @@
         return  $primeiroNum == 4 || $primeiroNum == 5 || $primeiroNum == 6;
     }
 
-    // Validar se a data inserida é maior que a data atual
     function validarData($data) {
         $dataAtual = date("Y-m");
         return $data >= $dataAtual;
